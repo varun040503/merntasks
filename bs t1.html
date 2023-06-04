@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap Grid System</title>
+  <head>
+    <title>Bootstrap Grid System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <style>
+      table.grid {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #E7E9EB;
+        color: #333;
+        padding: 0;
+      }
+      table.grid tr {
+        text-align: center;
+      }
+      table.grid td {
+        border: 4px solid rgb(88, 35, 35);
+        padding: 10px;
+      }
+    </style>
+  </head>
+<body>
+  <div class="table-responsive">
+    <table class="grid">
+      <tbody>
+        <tr>
+          <td>span 1</td>
+          <td>span 1</td>
+          <td>span 1</td>
+          <td>span 1</td>
+          <td>span 1</td>
+          <td>span 1</td>
+          <td>span 1</td>
+          <td>span 1</td>
+          <td>span 1</td>
+          <td>span 1</td>
+          <td>span 1</td>
+          <td>span 1</td>
+        </tr>
+        <tr>
+          <td colspan="4">&nbsp;span 4</td>
+          <td colspan="4">&nbsp;span 4</td>
+          <td colspan="4">&nbsp;span 4</td>
+        </tr>
+        <tr>
+          <td colspan="4">span 4</td>
+          <td colspan="8">span 8</td>
+        </tr>
+        <tr>
+          <td colspan="6">span 6</td>
+          <td colspan="6">span 6</td>
+        </tr>
+        <tr>
+          <td colspan="12">span 12</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

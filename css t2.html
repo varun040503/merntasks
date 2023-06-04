@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordered List with Icons</title>
+  <style>
+    .container {
+      margin-top: 50px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .custom-list {
+      list-style: none;
+      counter-reset: custom-counter;
+      padding-left: 0;
+    }
+
+    .custom-list li {
+      position: relative;
+      counter-increment: custom-counter;
+      margin-bottom: 10px;
+      padding-left: 30px;
+      color: #333; /* Change the text color */
+    }
+
+    .custom-list li::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 18px;
+      /* Change the icon color */
+    }
+
+    .list-icon {
+      margin-right: 10px;
+      font-size: 18px;
+      color: #00bbff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Ordered List with Icons</h1>
+    <ul class="custom-list">
+      <li><span class="list-icon">&#9733;</span> Item 1</li>
+      <li><span class="list-icon">&#9733;</span> Item 2</li>
+      <li><span class="list-icon">&#9733;</span> Item 3</li>
+      <li><span class="list-icon">&#9733;</span> Item 4</li>
+      <li><span class="list-icon">&#9733;</span> Item 5</li>
+    </ul>
+  </div>
+</body>
+
+</html>

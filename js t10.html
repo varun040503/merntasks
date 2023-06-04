@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Methods</title>
+</head>
+
+<body>
+  <h2>Array Methods Example</h2>
+  
+  <h3>Original Array:</h3>
+  <p id="originalArray"></p>
+
+  <h3>Array Methods:</h3>
+  <p id="arrayMethods"></p>
+
+  <script>
+    var originalArray = [21, 22, 23, 14, 5];
+
+// Display the original array
+document.getElementById("originalArray").textContent = originalArray.join(", ");
+
+// Array methods
+var arrayMethods = "";
+
+// 1. push() - add elements to the end of an array
+originalArray.push(6, 17);
+arrayMethods += "push(): " + originalArray.join(", ") + "<br>";
+
+// 2. pop() - remove the last element from an array
+originalArray.pop();
+arrayMethods += "pop(): " + originalArray.join(", ") + "<br>";
+
+// 3. shift() - remove the first element from an array
+originalArray.shift();
+arrayMethods += "shift(): " + originalArray.join(", ") + "<br>";
+
+// 4. unshift() - add elements to the beginning of an array
+originalArray.unshift(0);
+arrayMethods += "unshift(): " + originalArray.join(", ") + "<br>";
+
+// 5. slice() - extract a portion of an array
+var slicedArray = originalArray.slice(2, 4);
+arrayMethods += "slice(): " + slicedArray.join(", ") + "<br>";
+
+// 6. splice() - add, remove, or replace elements in an array
+originalArray.splice(12, 11, 99);
+arrayMethods += "splice(): " + originalArray.join(", ") + "<br>";
+
+// 7. concat() - merge arrays
+var newArray = originalArray.concat([8, 9]);
+arrayMethods += "concat(): " + newArray.join(", ") + "<br>";
+
+// 8. reverse() - reverse the order of elements in an array
+originalArray.reverse();
+arrayMethods += "reverse(): " + originalArray.join(", ") + "<br>";
+
+// 9. sort() - sort elements in an array
+originalArray.sort();
+arrayMethods += "sort(): " + originalArray.join(", ") + "<br>";
+
+// 10. indexOf() - find the first index of an element in an array
+var index = originalArray.indexOf(4);
+arrayMethods += "indexOf(): " + index + "<br>";
+
+// 11. includes() - check if an element is in an array
+var includes = originalArray.includes(3);
+arrayMethods += "includes(): " + includes + "<br>";
+
+// 12. join() - convert an array to a string with specified separator
+var joinedArray = originalArray.join("-");
+arrayMethods += "join(): " + joinedArray;
+
+// Display the array methods
+document.getElementById("arrayMethods").innerHTML = arrayMethods;
+
+  </script>
+</body>
+
+</html>

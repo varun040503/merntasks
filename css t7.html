@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+#mySidenav a {
+  position: absolute;
+  left: -80px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#HOME {
+  top: 20px;
+  background-color: #ff6347; /* Changed to coral color */
+}
+
+#PROJECTS {
+  top: 80px;
+  background-color: #4682b4; /* Changed to steel blue color */
+}
+
+#ABOUT {
+  top: 140px;
+  background-color: #ffa500; /* Changed to orange color */
+}
+
+#CONTACT {
+  top: 200px;
+  background-color: #800080; /* Changed to purple color */
+}
+
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="#" id="HOME">home</a>
+  <a href="#" id="PROJECTS">my projects</a>
+  <a href="#" id="ABOUT">about me</a>
+  <a href="#" id="CONTACT">contact info</a>
+</div>
+
+<div style="margin-left:80px;">
+  <h2>Hoverable Sidenav Buttons</h2>
+</div>
+   
+</body>
+</html>

@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: skyblue;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input,
+    select,
+    textarea
+     {
+      width: 100%;
+      padding: 10px;
+      background-color: rgb(225, 87, 110);
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+
+    .error {
+      color: red;
+      font-size: 12px;
+    }
+
+    button[type="submit"] {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1  style="text-align:center;">Registration Form</h1>
+  <form id="registrationForm" onsubmit="validateForm(event)">
+    <div>
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" required>
+      <span id="firstNameError" class="error"></span>
+    </div>
+
+    <div>
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" required>
+      <span id="lastNameError" class="error"></span>
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+      <span id="emailError" class="error"></span>
+    </div>
+
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" required>
+      <span id="passwordError" class="error"></span>
+    </div>
+
+    <div>
+      <label for="confirmPassword">Re-enter Password:</label>
+      <input type="password" id="confirmPassword" required>
+      <span id="confirmPasswordError" class="error"></span>
+    </div>
+
+    <div>
+      <label for="Gender">Gender:</label>
+      <input type="radio" id="Male" name="gender" value="MALE" >
+        <label for="male">MALE</label><br>
+        <input type="radio" id="female" name="gender" value="FEMALE">
+        <label for="female">FEMALE</label><br>
+      
+    </div>
+
+    <div>
+      <label for="age">Age:</label>
+      <input type="number" id="age" required>
+      <span id="ageError" class="error"></span>
+    </div>
+
+    <div>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" required>
+      <span id="phoneError" class="error"></span>
+    </div>
+
+    <div>
+      <b>Address:</b>
+      <textarea for="address"></textarea>
+      <span id="addressError" class="error"></span>
+    </div>
+
+    <div>
+      <label for="state">State:</label>
+      <input type="text" id="state" required>
+      <span id="stateError" class="error"></span>
+    </div>
+
+    <div>
+      <label for="country">Country:</label>
+      <input type="text" id="country" required>
+      <span id="countryError" class="error"></span>
+    </div>
+
+    <div>
+      <label for="detailsDeclaration">
+        <input type="checkbox" id="detailsDeclaration" required> I hereby declare that all the given details are true.
+      </label>
+    </div>
+    
+Log in to <a href="https://ethnus.com/" title="Go to W3Schools HTML section">ethnus</a> website
+<br>
+
+
+    <button type="submit">Register</button>
+  </form>
+
+  <script>
+    function validateForm(event) {
+      event.preventDefault();
+
+      // Clear previous error messages
+      firstNameError.textContent = '';
+      lastNameError.textContent = '';
+      emailError.textContent = '';
+      passwordError.textContent = '';
+      confirmPasswordError.textContent = '';
+      ageError.textContent = '';
+      phoneError.textContent = '';
+      addressError.textContent = '';
+      stateError.textContent = '';
+      countryError.textContent = '';
+
+      // First Name validation
+      if (firstName.value.trim() === '') {
+        firstNameError.textContent = 'First Name is required';
+        firstName.focus();
+        return false;
+      }
+
+      // first name length
+ 
+      var uid_len = firstName.value.length;
+      if (uid_len == 0 || uid_len >= 10 || uid_len < 5)
+      {
+        firstNameError.textContent = 'User Id should not be empty / length be between 5 to 10';
+        firstName.focus();
+        return false;
+      }
+
+      // Last Name validation
+      if (lastName.value.trim() === '') {
+        lastNameError.textContent = 'Last Name is required';
+        lastName.focus();
+        return false;
+      }
+
+      //Last name length
+      var uid_len = lastName.value.length;
+      if (uid_len == 0 || uid_len >= 10 || uid_len < 5)
+      {
+        lastNameError.textContent = 'User Id should not be empty / length be between 5 to 10';
+        lastName.focus();
+        return false;
+      }
+
+      // Email validation
+      if (email.value.trim() === '') {
+        emailError.textContent = 'Email is required';
+        email.focus();
+        return false;
+      }
+
+      // Password validation
+      if (password.value.trim() === '') {
+        passwordError.textContent = 'Password is required';
+        password.focus();
+        return false;
+      }
+
+      // Confirm Password validation
+      if (confirmPassword.value.trim() === '') {
+        confirmPasswordError.textContent = 'Please re-enter the password';
+        confirmPassword.focus();
+        return false;
+      }
+
+      // Password match validation
+      if (password.value !== confirmPassword.value) {
+        confirmPasswordError.textContent = 'Passwords do not match';
+        confirmPassword.focus();
+        return false;
+      }
+
+      // Age validation
+      if (age.value.trim() === '') {
+        ageError.textContent = 'Age is required';
+        age.focus();
+        return false;
+      }
+      var uid_len = age.value;
+      if (uid_len == 0 || uid_len >= 120 )
+      {
+        ageError.textContent = 'Invalid age';
+        age.focus();
+        return false;
+      }
+
+      // Phone validation
+      if (phone.value.trim() === '') {
+        phoneError.textContent = 'Phone Number is required';
+        phone.focus();
+        return false;
+      }
+
+      // Address validation
+      if (address.value.trim() === '') {
+        addressError.textContent = 'Address is required';
+        address.focus();
+        return false;
+      }
+
+      // State validation
+      if (state.value.trim() === '') {
+        stateError.textContent = 'State is required';
+        state.focus();
+        return false;
+      }
+
+      // Country validation
+      if (country.value.trim() === '') {
+        countryError.textContent = 'Country is required';
+        country.focus();
+        return false;
+      }
+
+      // Declaration validation
+      if (!detailsDeclaration.checked) {
+        alert('Please agree to the declaration');
+        return false;
+      }
+
+      // Form submission if all validations pass
+      alert('Form submitted successfully!');
+      return true;
+    }
+  </script>
+</body>
+</html>
